@@ -1,15 +1,15 @@
-import MeetingObject
+import customtkinter
 
-while(input != "exit"):
-    print(" -= Voici la v1 de votre agenda prsonnel =- \n")
-    print("1- Créer un évènement")
-    print("2- Afficher un évènement")
-    print("3- Modifier un évènement")
-    print("4- Supprimer un évènement")
-    task = input("Quelle action souhaitez-vous faire? En entrant 'exit' vous sortirez de votre agenda !")
-    if (task == "exit"):
-        exit
-    elif(task == ""):
-        MeetingObject.create
-    else:
-        print("Prout")
+class App(customtkinter.CTk):
+    def __init__(self):
+        super().__init__()
+        self.geometry("1250x700")
+
+        self.button = customtkinter.CTkButton(self, text="my button", command=self.button_callbck)
+        self.button.pack(padx=20, pady=20)
+
+    def button_callbck(self):
+        print("button clicked")
+
+app = App()
+app.mainloop()
